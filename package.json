@@ -1,0 +1,23 @@
+{
+  "name": "lead-live-poc",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "server",
+    "mobile"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "start": "npm run start --workspace server",
+    "mobile": "npm run start --workspace mobile",
+    "web": "npm run web --workspace mobile",
+    "demo:lead": "node scripts/demo-lead.mjs",
+    "meta:check": "node scripts/meta-check.mjs",
+    "jobs:retry": "node scripts/retry-jobs.mjs",
+    "test": "node --test --test-timeout=15000 server/test/*.test.mjs mobile/test/*.test.ts",
+    "typecheck": "npm run typecheck --workspace mobile"
+  }
+}
