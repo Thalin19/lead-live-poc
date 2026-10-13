@@ -10,6 +10,8 @@ Complete the account-specific steps in your own Meta account. Current dashboard 
 4. In Meta's business tools, create an Instant Form for the Page named **Intern Assignment Test Leads**, with name and email fields. Supply a valid privacy-policy URL if requested. Do not invent a business or verification documents. No paid ad is required by the assignment.
 5. Confirm that the intended Page and form are selectable in the [Lead Ads Testing Tool](https://developers.facebook.com/tools/lead-ads-testing/). Record the Form ID.
 
+**App mode:** Meta's official Testing and Troubleshooting guide, inspected in the authenticated browser on 14 October 2026, explicitly says the Lead Ads Testing Tool cannot be used in developer mode. Do not assume an unpublished/development app can satisfy the required tool-based demonstration. Check the app's activation/publishing requirements before recording. Activating the Meta integration is separate from publishing the React Native app to an app store or buying ads.
+
 ## Backend configuration
 
 Keep these values in ignored `server/.env`:
@@ -52,6 +54,7 @@ If delivery succeeds but no record appears, check pending/failed counts and back
 - [Meta lead integration setup reference](https://github.com/facebookincubator/catalogue-of-api-solutions/blob/main/solutions/leads/leads-retrieval-set-up-checker.md)
 - [Meta retrieving leads guide](https://developers.facebook.com/docs/marketing-api/guides/lead-ads/retrieving/)
 - [Meta webhook setup](https://developers.facebook.com/docs/graph-api/webhooks/getting-started/)
+- [Meta testing and troubleshooting](https://developers.facebook.com/documentation/ads-commerce/marketing-api/guides/lead-ads/testing-troubleshooting)
 - [React Native networking](https://reactnative.dev/docs/network)
 
-The two Meta guide pages were rate-limited during research. The Page/lead flow was checked against Meta's public repository reference; exact account permissions must still be verified in the authenticated dashboard.
+Some Meta guide pages were rate-limited through web search. The testing guide was subsequently inspected successfully in the authenticated browser, including its developer-mode restriction. Exact account permissions and activation requirements must still be verified in the app dashboard.
