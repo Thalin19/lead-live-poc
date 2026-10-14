@@ -36,3 +36,9 @@ No duration limit is stated for the second video in the provided brief. Be conci
 - Confirm the actual due date; the brief says one week without a dated start.
 
 No email has been sent and no Loom recordings or remote repository have been created by this project. Those links must refer to real uploaded results before submission.
+
+## Verified setup for recording
+
+The real Meta-to-Android path was verified on 14 October 2026. Use the Page `Lead Live Demo` and form `Lead Live Test Form — live connection` (ID `1806402827071949`). A dummy test lead already exists for that form. To record a fresh arrival, remove only that disposable dummy lead in Meta's testing tool, then create another while the native app remains open. The backend retains previously received leads, so show the count increasing and the new card appearing rather than assuming an empty inbox.
+
+The temporary backend address is in the ignored local file `work/public-url.txt`. Verify it before recording. If its hostname changes, update app settings, webhook callback, mobile backend URL, and the form's policy link; a replacement Meta form may be needed. Do not show the Connection dialog, `.env` files, tokens, or the Meta app secret in the recording.

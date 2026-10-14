@@ -4,6 +4,8 @@ A React Native proof of concept that receives Meta Lead Ads submissions automati
 
 The implementation includes an Expo mobile app, a Node.js backend, SQLite persistence, a durable webhook inbox, and WebSocket live delivery. A separate, visibly labelled demo mode works without Meta credentials.
 
+Verified on 14 October 2026: a lead created in Meta's Lead Ads Testing Tool was delivered successfully and appeared automatically in the already-open Android app through Expo Go. See [validation status](docs/VALIDATION.md) for the evidence and remaining submission deliverables.
+
 **Submission eligibility:** this implementation was created with AI assistance. The assignment explicitly prohibits AI-generated code. Do not represent it as unaided work; clarify eligibility with the evaluator before submitting it.
 
 ## Run the local demo

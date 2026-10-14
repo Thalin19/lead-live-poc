@@ -1,9 +1,12 @@
 import express from 'express';
 import { createServer } from 'node:http';
 import { randomUUID } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { WebSocketServer, WebSocket } from 'ws';
 import { equalSecret, validSignature, extractEvents, normalizeLead } from './meta.mjs';
 import { createWorker } from './worker.mjs';
+
+const privacyPolicy = readFileSync(new URL('../public/privacy.html', import.meta.url), 'utf8');
 
 export function createApp(config, store, options = {}) {
   const app = express();
@@ -32,6 +35,7 @@ export function createApp(config, store, options = {}) {
   const auth = (req, res, next) => equalSecret(req.get('Authorization'), `Bearer ${config.apiToken}`)
     ? next() : res.status(401).json({ error: 'unauthorized' });
   app.get('/health', (_req, res) => res.json({ ok: true }));
+  app.get('/privacy', (_req, res) => res.type('html').send(privacyPolicy));
   app.get('/api/status', auth, (_req, res) => res.json({ mode: config.demoMode ? 'demo' : 'meta', ...store.stats() }));
   app.get('/api/leads', auth, (_req, res) => res.json({ leads: store.list(), stats: store.stats() }));
   app.post('/api/jobs/retry', auth, (_req, res) => {
