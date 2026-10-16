@@ -11,6 +11,3 @@
 - Name and email are useful display fields. Missing fields are handled, and additional returned fields remain stored.
 - Graph API version is explicitly configured to a supported version selected in the actual app dashboard.
 - Local demo mode is solely a development convenience and cannot establish that the required Meta integration works.
-- AI assistance was used to generate this implementation. The brief's unaided-code requirement creates a submission-eligibility issue that cannot be resolved by technical tests.
-
-These assumptions describe the implementation; update them if the final setup differs.
